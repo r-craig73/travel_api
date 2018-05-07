@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = {"location": "Paris"}
+    @locations = Location.all
     json_response(@locations)
   end
 
@@ -26,11 +26,7 @@ class LocationsController < ApplicationController
   end
 
 
-  private
-  def json_response(object)
-    render json: object, status: :ok
-  end
-
+private
   def location_params
     params.permit(:country, :city)
   end
