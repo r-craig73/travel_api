@@ -1,7 +1,9 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = Location.all
+    country = params[:country]
+
+    @locations = Location.search_country(country)
     json_response(@locations)
   end
 
@@ -29,7 +31,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     if @location.destroy!
       render status: 200, json: {
-       message: "Your location was deleted.  Boom!"
+       message: "Your location was deleted.  Boom"
        }
     end
 

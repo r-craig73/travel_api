@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @location %>
+
+<h3>Search by country</h3>
+
+<%= form_for @location do |f| %>
+  <%= f.label :country, "Country"%>
+  <%= f.text_field :country %>
+  <%= f.submit "Search" %>
+<% end %>
