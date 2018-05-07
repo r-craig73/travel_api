@@ -2,7 +2,6 @@ class LocationsController < ApplicationController
 
   def index
     country = params[:country]
-
     @locations = Location.search_country(country)
     json_response(@locations)
   end
