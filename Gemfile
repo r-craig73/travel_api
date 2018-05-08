@@ -14,7 +14,11 @@ gem 'puma', '~> 3.11'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'active_model_serializers'
+gem 'rack-cors'
+gem 'knock'
+gem 'jwt'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -25,7 +29,7 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
-gem 'factory_bot_rails'
+
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -37,6 +41,7 @@ group :development, :test do
     gem 'launchy'
     gem 'pry'
     gem 'shoulda-matchers'
+    gem 'factory_bot_rails', :require => false
 end
 
 group :development do
